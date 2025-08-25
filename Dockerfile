@@ -1,10 +1,10 @@
 # Use NVIDIA CUDA base image
-FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.1-devel-ubuntu22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
-ENV RUNPOD_VOLUME_PATH=/serverless_wan2_vol
+ENV RUNPOD_VOLUME_PATH=/runpod-volume
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -35,8 +35,8 @@ WORKDIR /app/ComfyUI
 RUN pip3 install -r requirements.txt
 
 # Install custom nodes for Wan
-RUN cd custom_nodes && \
-    git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+WORKDIR /app/ComfyUI/custom_nodes
+RUN git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git
 
 # Copy our application code
 COPY . /app/
