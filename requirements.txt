@@ -1,0 +1,27 @@
+# RunPod serverless dependencies
+runpod==1.6.2
+
+# ComfyUI dependencies (core ones)
+torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+torchvision==0.16.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+torchaudio==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+
+# Image/video processing
+opencv-python==4.8.1.78
+Pillow==10.0.1
+imageio==2.31.5
+imageio-ffmpeg==0.4.9
+
+# HTTP and utilities
+requests==2.31.0
+aiohttp==3.9.1
+websockets==12.0
+
+# Transformers and ML
+transformers==4.36.2
+accelerate==0.25.0
+safetensors==0.4.1
+
+# ComfyUI specific
+xformers==0.0.23+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+spandrel==0.1.6
