@@ -109,7 +109,9 @@ def validate_input(job_input: Dict[str, Any]) -> Dict[str, Any]:
         "camera_type": job_input.get("camera_type", "Zoom In"),
         "width": job_input.get("width", 832),
         "height": job_input.get("height", 448), 
-        "length": job_input.get("length", 93),
+        "length": job_input.get("length", 93),  # frames
+        "speed": job_input.get("speed", 0.2),   # camera speed
+        "fps": job_input.get("fps", 30),        # video fps
     }
     
     # Validate camera type
