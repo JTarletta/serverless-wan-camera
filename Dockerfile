@@ -4,7 +4,7 @@ FROM runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
-ENV RUNPOD_VOLUME_PATH=/runpod-volume
+ENV RUNPOD_VOLUME_PATH=/serverless_wan2_vol
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
